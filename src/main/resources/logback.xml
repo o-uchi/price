@@ -4,6 +4,7 @@
     <logger name="org.hibernate.engine.transaction" level="DEBUG"/>
     <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="trace"/>
 
+    <logger name="org.eclipse.jetty.io.SelectorManager" level="error"/>
     <logger name="com.ptsinfo" level="info"/>
     <root level="warn"/>
 </configuration>

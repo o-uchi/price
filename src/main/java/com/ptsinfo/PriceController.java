@@ -1,5 +1,7 @@
 package com.ptsinfo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +13,11 @@ import static java.time.format.DateTimeFormatter.ofPattern;
 @Controller
 public class PriceController {
 
+	private static final Logger logger = LoggerFactory.getLogger(PriceController.class);
+
 	@RequestMapping("/price")
 	public String price(@RequestParam(value="code") String code, Model model) {
+		logger.info("Request /price?code={}", code);
 		model.addAttribute("code", code);
 		model.addAttribute("transactionTime", now().format(ofPattern("yyyy/MM/dd HH:mm:ss")));
 		switch (code.length()){
